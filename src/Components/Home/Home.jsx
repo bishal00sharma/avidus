@@ -220,7 +220,7 @@ const Home = () => {
           title="luxurious rooms"
           subtitle="deluxe rooms starting at ₹999"
         >
-          <Link to="/" className="btn-primary">
+          <Link to="/rooms" className="btn-primary">
             our rooms
           </Link>
         </Banner>

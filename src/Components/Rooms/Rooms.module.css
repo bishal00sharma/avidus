@@ -1,0 +1,119 @@
+.mainTopBoxProperties{
+    background-color: rgb(20,20,20);
+}
+
+.mainBoxPropertyRoom{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2%;
+} 
+.mainBoxPropertyRoom>div>div>div>p{
+    text-align: start;
+}
+.mainBoxPropertyRoom>div{
+ margin: auto;
+ border-radius: 15px;
+ background-color: white;
+ background-color: rgb(201, 189, 189);
+
+}
+.mainBoxPropertyRoom>div>div>img{
+   border-radius: 20px;
+}
+.mainBoxPropertyRoom>div>div>div{
+    margin: auto;
+    text-align: center;
+    box-shadow: red 2px 1px 3px 1px;
+}
+.mainBoxPropertyRoomBox>div>img{
+    width: 80%;
+    margin: auto;
+    
+}
+.mainBoxPropertyRoomTitle{
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.mainBoxPropertyRoomPriceBox{
+    display: flex;
+}
+.mainBoxPropertyRoomPriceBox>p:nth-child(1){
+    color: red;
+    font-weight: 600;
+    font-size: 19px;
+}
+.mainBoxPropertyRoomPriceBox>p:nth-child(2){
+    color: gray;
+}
+.mainBoxPropertyRoomPriceBox>p:nth-child(2){
+    padding-left: 15px;
+}
+.mainBoxPropertyRoomInsideBox{
+    width: 90%;
+    margin: auto;
+    border: rgb(197, 170, 108);
+    background-color: rgb(231, 228, 221);
+    border-radius: 10px;
+    padding: 10px;
+}
+.mainBoxPropertyButton{
+    background-color:rgb(255,0,0);
+    color:white;
+    border:none;
+    padding:10px 35px;
+    border-radius:5px;
+    margin: 8px 74px;
+}
+.showMore{
+    padding-left: 25%;
+}
+.mainBoxPropertyButton:hover{
+    background-color:rgb(190, 91, 14);
+}
+
+@media only screen and (max-width: 600px) {
+    .mainBoxPropertyRoom{
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 1%;
+    } 
+    .mainBoxPropertyRoomPriceBox>p:nth-child(2){
+        padding-left: 1px;
+    }
+    .mainBoxPropertyButton{
+        background-color:rgb(255,0,0);
+        color:white;
+        border:none;
+        padding:5px 15px;
+        border-radius:5px;
+        margin: 2px 40px;
+    }
+  }
+
+  @media only screen and (min-width:600px) and (max-width: 800px) {
+    .mainBoxPropertyRoom{
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 1%;
+
+    } 
+    .mainBoxPropertyRoomPriceBox>p:nth-child(2){
+        padding-left: 1px;
+    }
+    .mainBoxPropertyButton{
+        background-color:rgb(255,0,0);
+        color:white;
+        border:none;
+        padding:5px 15px;
+        border-radius:5px;
+        margin: 2px 30px;
+        
+    }
+  }

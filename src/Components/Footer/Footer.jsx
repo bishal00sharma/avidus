@@ -50,9 +50,6 @@ export default function Footer(){
             </div>
             
 
-
-
-
             <div className={styles.footerOptions}>
                 <b>Help</b>
                 <p>Your Booking</p>

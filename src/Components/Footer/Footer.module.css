@@ -1,0 +1,78 @@
+.main{
+    display:flex;
+    border: 1px solid rgb(225, 213, 213);
+    border-radius: 10px;
+    margin-top: 60px;
+}
+.footerOptions{
+    margin-top: 15px;
+}
+.footerOptions>p:hover{
+    color: red;
+    cursor: pointer;
+    font-size: larger;
+}
+.main >div> * {
+    margin: 15px 0;
+}
+.main>div{
+    width: 20%;
+    
+}
+
+.logoBox>*{
+    margin: 20px 0;
+}
+.logoBox>img{
+   width: 80%;
+}
+.logoBox>div>p{
+    text-align: start;
+}
+.logoBox{
+    width: 80%;
+    padding-left: 40px;
+}
+.logoBox>div>:nth-child(n):hover{
+    color: black;
+    cursor: pointer;
+}
+.logoBox>div{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 25px;
+    flex-wrap: wrap;
+}
+.logoBox>div>:nth-child(1){
+    color: rgb(58, 168, 211);
+}
+.logoBox>div>:nth-child(2){
+    color: rgb(69, 69, 188);
+}
+.logoBox>div>:nth-child(3){
+    color: rgb(215, 110, 81);
+}
+.logoBox>div>:nth-child(4){
+    color: red;
+}
+.logoBox>div>:nth-child(5){
+    color: rgba(25, 105, 155, 0.945);
+}
+.playstore{
+    width: 50%;
+}
+.playstore:hover{
+    cursor: pointer;
+}
+
+@media only screen and  (max-width: 500px){
+    .logoBox>img{
+        display: none;
+    }
+    .logoBox>p{
+         display: none;
+    }
+    .footerOptions{
+        margin-top: 10px;
+    }
+}

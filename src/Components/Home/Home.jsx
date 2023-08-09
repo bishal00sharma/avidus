@@ -209,6 +209,7 @@ import Banner from './Banner'
 import { Link } from "react-router-dom";
 import "./Home.css"
 import MainBox from '../Navbar/MainBox';
+import Footer from '../Footer/Footer';
 
 const Home = () => {
   return (
@@ -224,6 +225,7 @@ const Home = () => {
           </Link>
         </Banner>
       </Hero>
+      <Footer />
     </div>
   )
 }

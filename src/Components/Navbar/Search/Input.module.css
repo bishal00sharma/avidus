@@ -1,0 +1,31 @@
+#first{
+    width: 30px;
+    color: red;
+  }
+  #two{
+      width: 30px;
+      color: red;
+  }
+  #three{
+      width: 30px;
+      color: red;
+  }
+  
+  @media only screen and (max-width: 600px) {
+      #first{
+          display: none;
+      }
+      
+     #first,#two,#three{
+      color: white;
+      margin-top: 20px;
+      width: 25px;
+      height: 25px;
+  }
+  }
+  
+  @media screen and (min-width: 601px) and (max-width: 1000px) { 
+      input{
+          display: none;
+      }
+  }

@@ -7,7 +7,7 @@ import {AppContext} from "../Components/Context/AppContext" ;
 
 
 
-export const SignUp = () => {
+export const SignUpMerchant = () => {
 
   const [email, setEmail] =useState("");
   const [password, setPassword] =useState("");
@@ -24,6 +24,8 @@ export const SignUp = () => {
   }
   
   async function handleSign(){
+    let role="merchant";
+
     if(!email && !password){
       toast({
         title: 'Need email & password',
@@ -55,7 +57,7 @@ export const SignUp = () => {
     else{
       await fetch("http://localhost:8080/user/signup",{
       method: "POST" ,
-      body: JSON.stringify( {email, password}),
+      body: JSON.stringify( {email, password, role}),
       headers:{
              "Content-Type":`application/json`
          },
@@ -96,7 +98,7 @@ export const SignUp = () => {
               SignUp
             </Button>
 
-            <Text color='blue' _hover={{color:"red"}}> <Link to={`/signUpMerchant`}>Want to SignUp as a Merchant ? , Click here</Link></Text>
+            <Text color='blue' _hover={{color:"red"}}> <Link to={`/signup`}>Want to SignUp as a user ? , Click here</Link></Text>
             </VStack>
     </Box>
   )

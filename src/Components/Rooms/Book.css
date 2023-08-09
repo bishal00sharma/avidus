@@ -1,0 +1,22 @@
+.date {
+    position: absolute;
+    top: 285px;
+    z-index: 2;
+  }
+  .headerSearchText {
+    color: lightgray;
+    cursor: pointer;
+  }
+  .headerSearch {
+    height: 50px;
+    background-color: white;
+    border: 3px solid #febb02;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 0px;
+    border-radius: 5px;
+   margin: auto;
+    width: 80%;
+  }
+  

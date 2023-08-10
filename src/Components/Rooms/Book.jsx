@@ -18,7 +18,7 @@ import {
     CardFooter,
     Box,
   } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MdDateRange } from 'react-icons/md';
 import "./Book.css"
 import { DateRange } from 'react-date-range';
@@ -28,8 +28,9 @@ import axios from "axios";
 
 
 
-const Book = ({ img,title,location,price }) => {
+const Book = ({ img,title,location,price,id }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const [data,setData]=useState([]);
     const [dates, setDates] = useState([
         {
           startDate: new Date(),
@@ -39,18 +40,71 @@ const Book = ({ img,title,location,price }) => {
       ]);
 const [openDate, setOpenDate] = useState(false);
 
-async function reserve(dates){
-  let response= await fetch(`http://localhost:8080/property/64d38438b4d88626ad65659d`, {
-    body: JSON.stringify(dates[0] ),
+async function getData(){
+  let dataa=await fetch(`http://localhost:8080/property/${id}`) 
+  let res= await dataa.json()
+  setData(res[0].bookingDate)
+}
+console.log(data);
+
+
+async function reserve(){
+ 
+
+  let startDate= format(dates[0].startDate, "MM/dd/yyyy");
+  let endDate = format(dates[0].endDate, "MM/dd/yyyy");
+  // console.log(startDate, endDate);
+
+  let availabilty = checkAvailability(data, startDate, endDate);
+
+  if(availabilty){
+      let response= await fetch(`http://localhost:8080/property/${id}`, {
+    body: JSON.stringify({startDate, endDate }),
     method: "PATCH",
     headers: {
-      // token: localStorage.getItem("token"),
       "Content-Type": "application/json",
     },
   });
-  
+  }
+  else{
+    alert("No")
+  }
+
+getData()
   
 }
+
+function checkAvailability(data, startDate, endDate){
+  let [ currentStartMonth ,currentStartDay, currentStartYear ] = startDate.split("/");
+  let [ currentEndMonth, currentEndDay,  currentEndYear ] = endDate.split("/")
+
+  for(let i=0; i<data.length;i++){
+    let start = data[i].startDate;
+    let end = data[i].endDate;
+
+    let [startMonth,startDay ,startYear]=start.split("/");
+    let [endMonth,endDay ,endYear]=end.split("/");
+
+    // console.log("currentStartMonth",currentStartMonth);
+    // console.log("currentEndMonth", currentEndMonth);
+    // console.log("startMonth", startMonth);
+    // console.log("endMonth", endMonth);
+
+    if(currentStartYear==startYear || currentEndYear==endYear || currentEndYear==startYear || currentStartYear==endYear ){
+    if(currentStartMonth==startMonth || currentEndMonth==endMonth || currentEndMonth==startMonth || currentStartMonth==endMonth ){
+      if(currentStartDay==startDay || currentEndDay==endDay || currentEndDay==startDay || currentStartDay==endDay){
+        return false;
+      }
+  
+    }
+  }
+}
+  return true;
+}
+useEffect(()=>{
+  getData()
+},[])
+
 
     return (
       <>
@@ -121,7 +175,7 @@ async function reserve(dates){
             </ModalBody>
   
             <ModalFooter>
-              <Button colorScheme='green' mr={3} onClick={()=>reserve(dates)}>
+              <Button colorScheme='green' mr={3} onClick={()=>reserve()}>
                 Reserve
               </Button>
 

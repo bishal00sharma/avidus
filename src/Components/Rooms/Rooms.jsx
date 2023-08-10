@@ -81,7 +81,7 @@ function homePage(){
                      
                     </div>
                    
-                   <Book title={item.title} img={item.img} price={item.price} location={item.location} />
+                   <Book title={item.title} img={item.img} price={item.price} location={item.location} id={item._id}/>
                     <Tooltip hasArrow label='Know more' bg='red.600'>
                         <Text className={styles.showMore}> <Link to={`#`}>Show more Details</Link> </Text> 
                     </Tooltip>

@@ -55,7 +55,7 @@ export const SignUpMerchant = () => {
     }
    
     else{
-      await fetch("http://localhost:8080/user/signup",{
+      await fetch("https://gray-amused-lemur.cyclic.app/user/signup",{
       method: "POST" ,
       body: JSON.stringify( {email, password, role}),
       headers:{

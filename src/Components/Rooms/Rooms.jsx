@@ -31,7 +31,7 @@ const Rooms = () => {
   }
 
   async function getLocationData(value) {
-    let dataa = await fetch(`https://gray-amused-lemur.cyclic.app/location/${value}`);
+    let dataa = await fetch(`https://gray-amused-lemur.cyclic.app/property/location/${value}`);
     let res = await dataa.json();
     setData(res);
   }

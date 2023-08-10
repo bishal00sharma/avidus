@@ -17,7 +17,7 @@ const RoomHeader = ({ handleClick }) => {
   ]);
   const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
-  // const [openOptions, setOpenOptions] = useState(false);
+  
 
   function handleSearch() {
     handleClick(destination);
@@ -59,10 +59,10 @@ const RoomHeader = ({ handleClick }) => {
         <div className="headerSearchItem">
           <MdMan />
           <span
-            //   onClick={() => setOpenOptions(!openOptions)}
+            
             className="headerSearchText"
           >
-            1 adult · 2 children · 3 room
+            1 adult · 1 children 
           </span>
         </div>
         <div className="headerSearchItem">

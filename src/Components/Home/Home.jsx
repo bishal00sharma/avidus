@@ -12,8 +12,8 @@ const Home = () => {
       <MainBox />
         <Hero>
         <Banner
-          title="luxurious rooms"
-          subtitle="deluxe rooms starting at ₹999"
+          title="Book now Pay at Hotel"
+          subtitle="luxurious rooms starting at ₹999"
         >
           <Link to="/rooms" className="btn-primary">
             our rooms

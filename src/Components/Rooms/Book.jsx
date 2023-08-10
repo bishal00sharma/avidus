@@ -40,7 +40,7 @@ const Book = ({ img, title, location, price, id }) => {
   const [openDate, setOpenDate] = useState(false);
 
   async function getData() {
-    let dataa = await fetch(`http://localhost:8080/property/${id}`);
+    let dataa = await fetch(`https://gray-amused-lemur.cyclic.app/property/${id}`);
     let res = await dataa.json();
     setData(res[0].bookingDate);
   }
@@ -54,7 +54,7 @@ const Book = ({ img, title, location, price, id }) => {
     let availabilty = checkAvailability(data, startDate, endDate);
 
     if (availabilty) {
-      let response = await fetch(`http://localhost:8080/property/${id}`, {
+      let response = await fetch(`https://gray-amused-lemur.cyclic.app/property/${id}`, {
         body: JSON.stringify({ startDate, endDate }),
         method: "PATCH",
         headers: {

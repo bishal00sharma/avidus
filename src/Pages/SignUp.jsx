@@ -11,7 +11,7 @@ export const SignUp = () => {
 
   const [email, setEmail] =useState("");
   const [password, setPassword] =useState("");
-  const {loginUser} =useContext(AppContext);
+  
   const navigate= useNavigate();
   const toast = useToast()
 
@@ -53,7 +53,7 @@ export const SignUp = () => {
     }
    
     else{
-      await fetch("http://localhost:8080/user/signup",{
+      await fetch("https://gray-amused-lemur.cyclic.app/user/signup",{
       method: "POST" ,
       body: JSON.stringify( {email, password}),
       headers:{

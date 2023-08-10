@@ -23,7 +23,7 @@ export const Login = () => {
   }
   
   async function handleSign(){
-    let result =await fetch("http://localhost:8080/user/login",{
+    let result =await fetch("https://gray-amused-lemur.cyclic.app/user/login",{
       method: "POST" ,
       body: JSON.stringify( {email, password}),
       headers:{

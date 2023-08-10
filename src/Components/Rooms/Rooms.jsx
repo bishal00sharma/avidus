@@ -25,13 +25,13 @@ const Rooms = () => {
   const navigate = useNavigate();
 
   async function getData() {
-    let dataa = await fetch(`http://localhost:8080/property`);
+    let dataa = await fetch(`https://gray-amused-lemur.cyclic.app/property`);
     let res = await dataa.json();
     setData(res);
   }
 
   async function getLocationData(value) {
-    let dataa = await fetch(`http://localhost:8080/property/location/${value}`);
+    let dataa = await fetch(`https://gray-amused-lemur.cyclic.app/location/${value}`);
     let res = await dataa.json();
     setData(res);
   }
@@ -62,7 +62,7 @@ const Rooms = () => {
       getLocationData(value);
     }
 
-    // console.log('argument from Child: ', value);
+   
   };
 
   function homePage() {

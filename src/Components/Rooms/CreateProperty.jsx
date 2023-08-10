@@ -76,7 +76,7 @@ const CreateProperty = () => {
         isClosable: true,
       });
     } else {
-      await fetch("http://localhost:8080/property/create", {
+      await fetch("https://gray-amused-lemur.cyclic.app/property/create", {
         method: "POST",
         body: JSON.stringify({
           title,
